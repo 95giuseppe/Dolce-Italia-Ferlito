@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dolce Italia Ferlito | Basilea</title>
+  <meta name="description" content="Dolce Italia Ferlito a Basilea: caffè Illy, panini, arancini, tavola calda, dolci e prodotti tipici italiani.">
+  <meta name="theme-color" content="#0f172a" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f6f4ef;
+      --surface:#ffffff;
+      --surface-2:#f2efe7;
+      --text:#132033;
+      --muted:#5f6b7a;
+      --red:#d7262e;
+      --green:#129245;
+      --gold:#d6a84f;
+      --dark:#0f172a;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .section{padding:72px 0}
+    .section-sm{padding:48px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 14px;border-radius:999px;
+      background:#fff;border:1px solid rgba(0,0,0,.06);
+      color:var(--muted);font-size:.92rem;font-weight:600;
+      box-shadow:var(--shadow);
+    }
+    .title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(2.2rem,5vw,4.4rem);
+      line-height:1.02;
+      margin:0 0 16px;
+      letter-spacing:-.03em;
+    }
+    .title-md{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(1.9rem,4vw,3rem);
+      line-height:1.06;
+      margin:0 0 12px;
+    }
+    .lead{
+      font-size:clamp(1.05rem,2vw,1.3rem);
+      color:#f6f6f6;
+      max-width:720px;
+      margin:0 auto 24px;
+    }
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+
+    /* Header */
+    .site-header{
+      position:sticky;top:0;z-index:1200;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+    .nav{
+      height:78px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;min-width:0;
+    }
+    .brand img{height:46px;width:auto}
+    .brand-name{
+      font-weight:800;
+      letter-spacing:-.02em;
+      font-size:1rem;
+      display:none;
+    }
+
+    .nav-links{
+      display:flex;align-items:center;gap:22px;
+      font-weight:600;color:var(--dark);
+    }
+    .nav-links a{position:relative}
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;
+      background:var(--red);transition:.25s;
+    }
+    .nav-links a:hover::after{width:100%}
+
+    .header-actions{
+      display:flex;align-items:center;gap:10px;
+    }
+    .lang-toggle{
+      display:flex;align-items:center;gap:4px;
+      background:#fff;border:1px solid rgba(0,0,0,.08);
+      border-radius:999px;padding:4px;
+      box-shadow:var(--shadow);
+    }
+    .lang-btn{
+      border:0;background:transparent;padding:8px 12px;border-radius:999px;
+      font-weight:700;color:var(--muted);cursor:pointer;
+    }
+    .lang-btn.active{
+      background:var(--green);color:#fff;
+    }
+
+    .menu-toggle{
+      width:46px;height:46px;border-radius:14px;border:1px solid rgba(0,0,0,.08);
+      background:#fff;display:none;place-items:center;cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after{
+      display:block;width:18px;height:2px;background:#1e293b;border-radius:2px;position:relative;content:"";
+    }
+    .menu-toggle span::before{position:absolute;top:-6px}
+    .menu-toggle span::after{position:absolute;top:6px}
+
+    .mobile-panel{
+      display:none;position:absolute;left:12px;right:12px;top:86px;
+      background:#fff;border-radius:22px;padding:18px;
+      box-shadow:0 20px 50px rgba(0,0,0,.14);
+      border:1px solid rgba(0,0,0,.05);
+    }
+    .mobile-panel.open{display:block}
+    .mobile-panel a{
+      display:block;padding:14px 10px;font-weight:700;border-radius:14px;
+    }
+    .mobile-panel a:hover{background:#f5f5f5}
+
+    /* Hero */
+    .hero{
+      position:relative;min-height:92vh;display:grid;place-items:center;
+      color:#fff;overflow:hidden;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.54)),
+        url("images/hero.jpg") center/cover no-repeat;
+      transform:scale(1.03);
+    }
+    .hero-inner{
+      position:relative;z-index:2;
+      text-align:center;
+      padding:70px 0 40px;
+    }
+    .hero-logo{
+      width:min(290px,60vw);
+      margin:0 auto 24px;
+      filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));
+    }
+    .hero .cta-row{
+      display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:56px;padding:0 22px;border-radius:999px;font-weight:800;
+      border:0;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      box-shadow:var(--shadow);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--red);color:#fff}
+    .btn-secondary{background:#fff;color:var(--text)}
+    .btn-green{background:var(--green);color:#fff}
+    .btn-outline{
+      background:transparent;color:#fff;border:1px solid rgba(255,255,255,.26)
+    }
+
+    .hero-badges{
+      display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0 0;
+    }
+    .hero-badge{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:700;
+      backdrop-filter:blur(10px);
+    }
+
+    /* Featured */
+    .featured-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px;
+    }
+    .product-card{
+      background:var(--surface);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+      border:2px solid rgba(18,146,69,.08);
+      display:flex;flex-direction:column;
+    }
+    .product-card .img-wrap{position:relative;aspect-ratio:1.08}
+    .product-card img{width:100%;height:100%;object-fit:cover}
+    .badge{
+      position:absolute;top:12px;right:12px;background:var(--red);color:#fff;
+      font-size:.82rem;font-weight:800;padding:8px 12px;border-radius:999px;
+      box-shadow:var(--shadow);
+    }
+    .product-body{padding:18px}
+    .product-title{font-weight:800;font-size:1.2rem;margin:0 0 6px}
+    .price{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      margin-top:12px;font-size:2rem;font-weight:900;color:var(--green)
+    }
+
+    /* Offer */
+    .offer{
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.12), transparent 30%),
+        linear-gradient(135deg, #f4363f, #d7262e);
+      color:#fff;border-radius:34px;padding:26px;box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .offer-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;
+    }
+    .offer-card{
+      background:#fff;border-radius:28px;padding:22px;color:var(--text);
+      box-shadow:var(--shadow);
+    }
+    .offer-price{
+      display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap
+    }
+    .old-price{
+      font-size:1.8rem;color:#94a3b8;text-decoration:line-through;font-weight:800;
+    }
+    .new-price{
+      font-size:4rem;line-height:1;font-weight:900;color:var(--red);
+    }
+    .stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;
+    }
+    .stat{
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:22px;padding:16px;text-align:center;
+    }
+    .stat strong{display:block;font-size:2rem;line-height:1;margin-bottom:6px}
+
+    /* About */
+    .split{
+      display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;
+    }
+    .rounded-img{
+      border-radius:28px;overflow:hidden;box-shadow:var(--shadow);
+      min-height:420px;
+    }
+    .rounded-img img{width:100%;height:100%;object-fit:cover}
+    .feature-icons{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px;
+    }
+    .feature-box{
+      background:#fff;padding:20px;border-radius:22px;box-shadow:var(--shadow)
+    }
+    .feature-box .emoji{font-size:1.8rem;margin-bottom:10px}
+
+    /* Menu */
+    .menu-tabs{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px auto 28px;max-width:980px;
+    }
+    .menu-tab{
+      background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:16px 14px;
+      font-weight:800;cursor:pointer;box-shadow:var(--shadow);text-align:center;
+    }
+    .menu-tab.active{
+      background:var(--green);color:#fff;border-color:transparent;
+    }
+
+    .menu-panels{max-width:980px;margin:0 auto}
+    .menu-panel{display:none}
+    .menu-panel.active{display:block}
+    .menu-block{
+      background:#fff;border-radius:26px;box-shadow:var(--shadow);
+      padding:22px;margin-bottom:18px;
+    }
+    .menu-block h3{
+      margin:0 0 14px;font-size:1.35rem;font-weight:900;
+      display:flex;align-items:center;gap:10px
+    }
+    .menu-list{
+      display:grid;gap:12px;
+    }
+    .menu-item{
+      display:flex;align-items:flex-start;justify-content:space-between;gap:18px;
+      padding:16px 18px;border-radius:18px;background:#fbfbfb;border:1px solid rgba(0,0,0,.05);
+    }
+    .menu-item strong{display:block;font-size:1.04rem}
+    .menu-item small{display:block;color:var(--muted);margin-top:4px}
+    .menu-item .amount{
+      font-weight:900;color:var(--green);white-space:nowrap;font-size:1.05rem;
+    }
+    .menu-note{
+      margin-top:18px;padding:16px 18px;border-radius:18px;background:#fff8e8;
+      border:1px solid #f3ddb2;font-weight:700;
+    }
+
+    /* Custom */
+    .custom-wrap{
+      display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;
+    }
+    .ingredient-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px;
+    }
+    .ingredient{
+      background:#fff;border-radius:18px;padding:14px 16px;font-weight:700;
+      box-shadow:var(--shadow)
+    }
+    .custom-cta{
+      margin-top:18px;padding:18px 20px;border-radius:22px;background:#effcf4;
+      border:2px solid rgba(18,146,69,.24);font-weight:800;
+    }
+
+    /* Shop */
+    .shop-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px
+    }
+    .shop-card{
+      background:#fff;border-radius:24px;padding:24px;box-shadow:var(--shadow);
+      border:2px solid rgba(0,0,0,.04)
+    }
+    .shop-card.green{background:#eefaf2;border-color:rgba(18,146,69,.16)}
+    .shop-card.red{background:#fff1f1;border-color:rgba(215,38,46,.18)}
+    .shop-card.gold{background:#fff9e8;border-color:rgba(214,168,79,.2)}
+
+    /* Gallery */
+    .gallery-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px;
+    }
+    .gallery-card{
+      background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)
+    }
+    .gallery-card img{
+      width:100%;height:280px;object-fit:cover
+    }
+
+    /* Instagram */
+    .insta-box{
+      background:#fff;border-radius:30px;padding:32px;text-align:center;box-shadow:var(--shadow)
+    }
+    .insta-pill{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:12px;background:linear-gradient(90deg,#7c3aed,#ec4899,#f97316);
+      color:#fff;padding:16px 26px;border-radius:999px;font-size:1.12rem;font-weight:900;
+      box-shadow:var(--shadow);margin-top:14px;
+    }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+    }
+    .contact-card{
+      background:#fff;border-radius:24px;padding:24px;box-shadow:var(--shadow)
+    }
+    .contact-card h3{margin:0 0 10px;font-size:1.3rem}
+    .map-wrap{
+      overflow:hidden;border-radius:24px;box-shadow:var(--shadow);margin-top:18px
+    }
+    .contact-actions{
+      display:flex;flex-wrap:wrap;gap:12px;margin-top:16px
+    }
+
+    /* Footer */
+    .site-footer{
+      background:#0c1830;color:#d8dfeb;padding:54px 0 32px;margin-top:28px;
+    }
+    .footer-grid{
+      display:grid;grid-template-columns:1.2fr .8fr .9fr;gap:28px;
+    }
+    .footer-title{font-weight:900;color:#fff;margin-bottom:12px}
+    .footer-logo{height:58px;margin-bottom:14px}
+    .footer-links a{
+      display:block;padding:6px 0;color:#d8dfeb
+    }
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.08);margin-top:26px;padding-top:18px;
+      color:#b6c2d2;font-size:.95rem
+    }
+
+    /* Floating buttons */
+    .floating{
+      position:fixed;right:16px;bottom:16px;display:grid;gap:10px;z-index:1200;
+    }
+    .floating a{
+      width:58px;height:58px;border-radius:999px;display:grid;place-items:center;
+      color:#fff;box-shadow:var(--shadow);font-size:1.35rem
+    }
+    .float-call{background:var(--green)}
+    .float-map{background:var(--red)}
+
+    @media (max-width: 1024px){
+      .featured-grid{grid-template-columns:repeat(2,1fr)}
+      .offer-grid,.split,.custom-wrap,.footer-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .menu-tabs{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 760px){
+      .nav-links{display:none}
+      .menu-toggle{display:grid}
+      .hero{min-height:88vh}
+      .hero .title{font-size:clamp(2.3rem,9vw,4rem)}
+      .lead{font-size:1.08rem}
+      .section{padding:58px 0}
+      .featured-grid,.gallery-grid,.shop-grid,.feature-icons,.ingredient-grid{grid-template-columns:1fr}
+      .menu-tabs{grid-template-columns:1fr}
+      .brand img{height:34px}
+      .contact-actions .btn{width:100%}
+      .hero .cta-row .btn{width:100%}
+      .hero .cta-row{max-width:420px;margin-inline:auto}
+      .stats{grid-template-columns:1fr}
+      .offer-price .new-price{font-size:3.2rem}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Dolce Italia Ferlito">
+        <img src="images/logo.png" alt="Dolce Italia Ferlito logo">
+      </a>
+
+      <nav class="nav-links" aria-label="Navigazione principale">
+        <a href="#about" data-i18n="nav_about">Chi siamo</a>
+        <a href="#menu" data-i18n="nav_menu">Menu</a>
+        <a href="#custom" data-i18n="nav_custom">Panino</a>
+        <a href="#shop" data-i18n="nav_shop">Bottega</a>
+        <a href="#gallery" data-i18n="nav_gallery">Galleria</a>
+        <a href="#contact" data-i18n="nav_contact">Contatti</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle" aria-label="Selettore lingua">
+          <button class="lang-btn active" data-lang="it">IT</button>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+        <button class="menu-toggle" aria-label="Apri menu" id="menuToggle">
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel">
+        <a href="#about" data-i18n="nav_about">Chi siamo</a>
+        <a href="#menu" data-i18n="nav_menu">Menu</a>
+        <a href="#custom" data-i18n="nav_custom">Panino</a>
+        <a href="#shop" data-i18n="nav_shop">Bottega</a>
+        <a href="#gallery" data-i18n="nav_gallery">Galleria</a>
+        <a href="#contact" data-i18n="nav_contact">Contatti</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <img src="images/logo.png" class="hero-logo" alt="Dolce Italia Ferlito">
+        <h1 class="title" data-i18n="hero_title">Il vero gusto dell’Italia, ogni giorno a Basilea.</h1>
+        <p class="lead" data-i18n="hero_text">Caffè artigianale, specialità italiane fresche e prodotti autentici nel cuore di Basilea.</p>
+
+        <div class="hero-cta cta-row">
+          <a class="btn btn-primary" href="#menu" data-i18n="hero_btn_menu">Scopri il menu</a>
+          <a class="btn btn-secondary" href="tel:+41786121823" data-i18n="hero_btn_call">Chiama ora</a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kleinh%C3%BCningerstrasse+141%2C+4057+Basel" data-i18n="hero_btn_route">Apri percorso</a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hero-badge" data-i18n="hero_badge_1">☕ Caffè Illy</div>
+          <div class="hero-badge" data-i18n="hero_badge_2">🥪 Take Away</div>
+          <div class="hero-badge" data-i18n="hero_badge_3">🇮🇹 Specialità italiane</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sm">
+      <div class="container center">
+        <div class="eyebrow" data-i18n="featured_eyebrow">⭐ I più amati</div>
+        <h2 class="title-md" data-i18n="featured_title">I prodotti che i clienti scelgono più spesso</h2>
+        <p class="muted" data-i18n="featured_text">Una selezione rapida dei preferiti del momento.</p>
+
+        <div class="featured-grid">
+          <article class="product-card">
+            <div class="img-wrap">
+              <img src="images/gallery-panino.jpg" alt="Panino Mortadella e Stracciatella">
+              <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Mortadella &amp; Stracciatella</h3>
+              <div class="price"><span>CHF 8.50</span><span>🔥</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="img-wrap">
+              <img src="images/gallery-dolce.jpg" alt="Arancino Ragù">
+              <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Arancino Ragù</h3>
+              <div class="price"><span>CHF 6.50</span><span>🔥</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="img-wrap">
+              <img src="images/gallery-caffe.jpg" alt="Cappuccino Illy">
+              <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Cappuccino Illy</h3>
+              <div class="price"><span>CHF 5.20</span><span>☕</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="img-wrap">
+              <img src="images/custom-panino.jpg" alt="Panzerotto Pistacchio">
+              <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Panzerotto Pistazie</h3>
+              <div class="price"><span>CHF 7.80</span><span>🔥</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sm">
+      <div class="container">
+        <div class="offer">
+          <div class="offer-grid">
+            <div>
+              <div class="eyebrow" style="background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.12)" data-i18n="offer_eyebrow">⏰ Solo fino alle 14:00</div>
+              <h2 class="title-md" style="color:#fff" data-i18n="offer_title">Offerta pranzo</h2>
+              <p style="font-size:1.1rem;max-width:560px" data-i18n="offer_text">Perfetta per la pausa pranzo: scegli un panino e abbinalo alla tua bibita.</p>
+
+              <div class="stats">
+                <div class="stat">
+                  <strong>5 Min</strong>
+                  <span data-i18n="offer_stat_1">preparazione veloce</span>
+                </div>
+                <div class="stat">
+                  <strong>Fresh</strong>
+                  <span data-i18n="offer_stat_2">preparato al momento</span>
+                </div>
+                <div class="stat">
+                  <strong>Take Away</strong>
+                  <span data-i18n="offer_stat_3">pratico e veloce</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="eyebrow" data-i18n="offer_card_badge">🔥 Combo del giorno</div>
+              <h3 style="font-size:2rem;margin:16px 0 10px" data-i18n="offer_card_title">Panino + Bibita</h3>
+              <div class="offer-price">
+                <span class="old-price">CHF 12.00</span>
+                <span class="new-price">10.90</span>
+              </div>
+              <p class="muted" style="margin:14px 0 18px" data-i18n="offer_card_text">Disponibile tutti i giorni fino alle 14:00.</p>
+              <a href="tel:+41786121823" class="btn btn-green" style="width:100%" data-i18n="offer_btn">Ordina ora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container split">
+        <div class="rounded-img">
+          <img src="images/about.jpg" alt="Atmosfera Dolce Italia">
+        </div>
+
+        <div>
+          <div class="eyebrow" data-i18n="about_eyebrow">Chi siamo</div>
+          <h2 class="title-md" data-i18n="about_title">Un angolo d’Italia a Basilea</h2>
+          <p class="muted" style="font-size:1.08rem" data-i18n="about_text">
+            Da Dolce Italia Ferlito portiamo ogni giorno un angolo d’Italia a Basilea:
+            caffè, colazioni, tavola calda, panini, piadine, dolci e prodotti tipici selezionati.
+          </p>
+
+          <div class="feature-icons">
+            <div class="feature-box">
+              <div class="emoji">☕</div>
+              <strong data-i18n="about_box_1_title">Caffè Illy</strong>
+              <div class="muted" data-i18n="about_box_1_text">Autentico caffè italiano</div>
+            </div>
+            <div class="feature-box">
+              <div class="emoji">🥖</div>
+              <strong data-i18n="about_box_2_title">Fresco</strong>
+              <div class="muted" data-i18n="about_box_2_text">Prodotti freschi ogni giorno</div>
+            </div>
+            <div class="feature-box">
+              <div class="emoji">🍝</div>
+              <strong data-i18n="about_box_3_title">Tavola calda</strong>
+              <div class="muted" data-i18n="about_box_3_text">Specialità calde italiane</div>
+            </div>
+            <div class="feature-box">
+              <div class="emoji">🇮🇹</div>
+              <strong data-i18n="about_box_4_title">Autentico</strong>
+              <div class="muted" data-i18n="about_box_4_text">Vero gusto italiano</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="container center">
+        <div class="eyebrow" data-i18n="menu_eyebrow">Menu</div>
+        <h2 class="title-md" data-i18n="menu_title">Il nostro menu</h2>
+        <p class="muted" data-i18n="menu_text">Specialità italiane preparate con passione.</p>
+
+        <div class="menu-tabs">
+          <button class="menu-tab active" data-panel="coffee" data-i18n="tab_1">☕ Caffè</button>
+          <button class="menu-tab" data-panel="food" data-i18n="tab_2">🍽️ Tavola calda</button>
+          <button class="menu-tab" data-panel="sandwich" data-i18n="tab_3">🥪 Panini</button>
+          <button class="menu-tab" data-panel="sweet" data-i18n="tab_4">🥐 Dolci & Bevande</button>
+        </div>
+
+        <div class="menu-panels">
+
+          <div class="menu-panel active" id="coffee">
+            <div class="menu-block">
+              <h3 data-i18n="coffee_title">☕ Caffè – Illy</h3>
+              <div class="menu-list">
+                <div class="menu-item"><div><strong>Espresso</strong></div><div class="amount">CHF 4.20</div></div>
+                <div class="menu-item"><div><strong>Doppelter Espresso</strong></div><div class="amount">CHF 5.80</div></div>
+                <div class="menu-item"><div><strong>Kaffee</strong></div><div class="amount">CHF 4.60</div></div>
+                <div class="menu-item"><div><strong>Schale</strong></div><div class="amount">CHF 4.80</div></div>
+                <div class="menu-item"><div><strong>Cappuccino</strong><small data-i18n="popular_note">Molto richiesto</small></div><div class="amount">CHF 5.20</div></div>
+                <div class="menu-item"><div><strong>Latte Macchiato</strong></div><div class="amount">CHF 5.80</div></div>
+                <div class="menu-item"><div><strong>Heisser Tee</strong></div><div class="amount">CHF 4.50</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-panel" id="food">
+            <div class="menu-block">
+              <h3 data-i18n="hot_title">🍽️ Tavola calda</h3>
+              <div class="menu-list">
+                <div class="menu-item"><div><strong>Arancino Ragù</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong>Arancino Spinat</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong>Arancino Pistazien</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong>Arancino Aubergine</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong>Panzerotto Pistazien</strong></div><div class="amount">CHF 7.80</div></div>
+                <div class="menu-item"><div><strong>Panzerotto Prosciutto</strong></div><div class="amount">CHF 7.80</div></div>
+                <div class="menu-item"><div><strong>Panzerotto Salame piccante</strong></div><div class="amount">CHF 7.80</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-panel" id="sandwich">
+            <div class="menu-block">
+              <h3 data-i18n="sandwich_title">🥪 Panini</h3>
+              <div class="menu-list">
+                <div class="menu-item"><div><strong>Mortadella e stracciatella</strong></div><div class="amount">CHF 8.50</div></div>
+                <div class="menu-item"><div><strong>Salame piccante e formaggio</strong></div><div class="amount">CHF 7.50</div></div>
+                <div class="menu-item"><div><strong>Prosciutto crudo e gorgonzola</strong></div><div class="amount">CHF 7.80</div></div>
+                <div class="menu-item"><div><strong>Prosciutto cotto e formaggio</strong></div><div class="amount">CHF 7.50</div></div>
+                <div class="menu-item"><div><strong>Prosciutto cotto, salsa tartufata e stracciatella</strong></div><div class="amount">CHF 8.50</div></div>
+                <div class="menu-item"><div><strong>Fesa di tacchino e mozzarella</strong></div><div class="amount">CHF 7.20</div></div>
+                <div class="menu-item"><div><strong>Bresaola e formaggio</strong></div><div class="amount">CHF 8.00</div></div>
+                <div class="menu-item"><div><strong>Vegetariano</strong></div><div class="amount">CHF 7.50</div></div>
+              </div>
+              <div class="menu-note" data-i18n="sandwich_note">Panino + bibita disponibile anche in formula pranzo.</div>
+            </div>
+          </div>
+
+          <div class="menu-panel" id="sweet">
+            <div class="menu-block">
+              <h3 data-i18n="sweet_title">🥐 Colazione, dolci e bevande</h3>
+              <div class="menu-list">
+                <div class="menu-item"><div><strong>Buttergipfel</strong></div><div class="amount">CHF 3.20</div></div>
+                <div class="menu-item"><div><strong>Gipfel Vanille</strong></div><div class="amount">CHF 3.80</div></div>
+                <div class="menu-item"><div><strong>Gipfel Schokolade</strong></div><div class="amount">CHF 3.80</div></div>
+                <div class="menu-item"><div><strong>Gipfel Nutella</strong></div><div class="amount">CHF 4.20</div></div>
+                <div class="menu-item"><div><strong>Gipfel Pistazio</strong></div><div class="amount">CHF 4.50</div></div>
+                <div class="menu-item"><div><strong>Babà al rum</strong></div><div class="amount">CHF 4.50</div></div>
+                <div class="menu-item"><div><strong>Pasticciotto leccese</strong></div><div class="amount">CHF 3.60</div></div>
+                <div class="menu-item"><div><strong>Torta a fette</strong></div><div class="amount">CHF 4.60</div></div>
+                <div class="menu-item"><div><strong>Bubble Tea</strong></div><div class="amount">CHF 7.00</div></div>
+                <div class="menu-item"><div><strong>Acqua</strong></div><div class="amount">CHF 2.90</div></div>
+                <div class="menu-item"><div><strong>Coca-Cola / Fanta</strong></div><div class="amount">CHF 3.50</div></div>
+              </div>
+              <div class="menu-note" data-i18n="allergen_note">Tutti i prezzi sono IVA inclusa. Allergeni? Chiedici pure.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="custom">
+      <div class="container custom-wrap">
+        <div>
+          <div class="eyebrow" data-i18n="custom_eyebrow">Personalizza</div>
+          <h2 class="title-md" data-i18n="custom_title">Crea il tuo panino o piadina</h2>
+          <p class="muted" data-i18n="custom_text">Scegli i tuoi ingredienti preferiti per un’esperienza su misura.</p>
+
+          <div class="ingredient-grid">
+            <div class="ingredient">Prosciutto crudo</div>
+            <div class="ingredient">Prosciutto cotto</div>
+            <div class="ingredient">Salami</div>
+            <div class="ingredient">Scharfe Salami</div>
+            <div class="ingredient">Mortadella</div>
+            <div class="ingredient">Edamer</div>
+            <div class="ingredient">Mozzarella</div>
+            <div class="ingredient">Provola</div>
+            <div class="ingredient">Coppa</div>
+            <div class="ingredient">Stracciatella Käse</div>
+            <div class="ingredient">Trüffelsauce</div>
+            <div class="ingredient">Bresaola</div>
+            <div class="ingredient">Putenbrust</div>
+            <div class="ingredient">Speck</div>
+          </div>
+
+          <div class="custom-cta" data-i18n="custom_cta">
+            🥪 Vieni in negozio per creare il tuo panino o piadina perfetta.
+          </div>
+        </div>
+
+        <div class="rounded-img">
+          <img src="images/custom-panino.jpg" alt="Crea il tuo panino o piadina">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="center">
+          <div class="eyebrow" data-i18n="shop_eyebrow">Bottega italiana</div>
+          <h2 class="title-md" data-i18n="shop_title">Specialità italiane selezionate</h2>
+          <p class="muted" data-i18n="shop_text">Scopri il nostro angolo dedicato alle eccellenze italiane: olio extravergine di oliva, biscotti, panettoni, passata di pomodoro, ’nduja calabrese e molto altro.</p>
+        </div>
+
+        <div class="split" style="margin-top:28px">
+          <div class="rounded-img">
+            <img src="images/bottega-olio.jpg" alt="Olio extravergine">
+          </div>
+          <div class="rounded-img">
+            <img src="images/bottega-prodotti.jpg" alt="Prodotti italiani">
+          </div>
+        </div>
+
+        <div class="shop-grid">
+          <div class="shop-card green">
+            <div style="font-size:2rem">🫒</div>
+            <h3>Olio Extravergine</h3>
+            <p class="muted" data-i18n="shop_card_1">DOP e IGP selezionati</p>
+          </div>
+          <div class="shop-card red">
+            <div style="font-size:2rem">🍪</div>
+            <h3>Biscotti &amp; Dolci</h3>
+            <p class="muted" data-i18n="shop_card_2">Panettoni artigianali</p>
+          </div>
+          <div class="shop-card gold">
+            <div style="font-size:2rem">🌶️</div>
+            <h3>'Nduja Calabrese</h3>
+            <p class="muted" data-i18n="shop_card_3">Piccante e autentica</p>
+          </div>
+          <div class="shop-card">
+            <div style="font-size:2rem">🍅</div>
+            <h3>Passata di Pomodoro</h3>
+            <p class="muted" data-i18n="shop_card_4">Sapori italiani da portare a casa</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container center">
+        <div class="eyebrow" data-i18n="gallery_eyebrow">Galleria</div>
+        <h2 class="title-md" data-i18n="gallery_title">Un viaggio visivo attraverso i nostri sapori</h2>
+        <p class="muted" data-i18n="gallery_text">Uno sguardo alla nostra atmosfera, ai nostri prodotti e ai sapori d’Italia.</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-card"><img src="images/gallery-pasta.jpg" alt="Pasta italiana"></div>
+          <div class="gallery-card"><img src="images/gallery-bruschetta.jpg" alt="Specialità italiane"></div>
+          <div class="gallery-card"><img src="images/gallery-panino.jpg" alt="Panini italiani"></div>
+          <div class="gallery-card"><img src="images/gallery-caffe.jpg" alt="Cappuccino"></div>
+          <div class="gallery-card"><img src="images/gallery-dolce.jpg" alt="Dolci italiani"></div>
+          <div class="gallery-card"><img src="images/custom-panino.jpg" alt="Piadina o panino personalizzato"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sm">
+      <div class="container">
+        <div class="insta-box">
+          <div style="font-size:3rem">📸</div>
+          <h2 class="title-md" data-i18n="insta_title">Seguici su Instagram</h2>
+          <p class="muted" data-i18n="insta_text">Per vedere tutte le nostre specialità e novità quotidiane.</p>
+          <a class="insta-pill" href="https://www.instagram.com/dolceitalia_ferlito?igsh=MWJxeTM5ZnRjZmJyaQ==" target="_blank" rel="noopener">@dolceitalia_ferlito</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="center">
+          <div class="eyebrow" data-i18n="contact_eyebrow">Contatti</div>
+          <h2 class="title-md" data-i18n="contact_title">Vieni a trovarci o contattaci</h2>
+          <p class="muted" data-i18n="contact_text">Siamo a Basilea, pronti ad accoglierti ogni giorno con gusto italiano.</p>
+        </div>
+
+        <div class="contact-grid" style="margin-top:28px">
+          <div class="contact-card">
+            <h3 data-i18n="address_title">Indirizzo</h3>
+            <p class="muted">Kleinhüningerstrasse 141, 4057 Basel, Switzerland</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kleinh%C3%BCningerstrasse+141%2C+4057+Basel" data-i18n="route_btn">Indicazioni</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3 data-i18n="phone_title">Telefono</h3>
+            <p class="muted">+41 78 612 18 23</p>
+            <div class="contact-actions">
+              <a class="btn btn-green" href="tel:+41786121823" data-i18n="call_btn">Chiama ora</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Email</h3>
+            <p class="muted">info.dolceitalia2025@gmail.com</p>
+            <div class="contact-actions">
+              <a class="btn btn-secondary" href="mailto:info.dolceitalia2025@gmail.com" data-i18n="mail_btn">Invia email</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3 data-i18n="hours_title">Orari di apertura</h3>
+            <p class="muted" id="hoursText">
+              Lunedì: Chiuso<br>
+              Martedì–Venerdì: 07:30–18:30<br>
+              Sabato: 09:00–18:30<br>
+              Domenica: 10:00–16:00
+            </p>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            title="Mappa Dolce Italia Ferlito"
+            src="https://www.google.com/maps?q=Kleinh%C3%BCningerstrasse%20141,%204057%20Basel&z=16&output=embed"
+            width="100%"
+            height="420"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="images/logo.png" alt="Dolce Italia Ferlito" class="footer-logo">
+          <div class="footer-title" data-i18n="footer_tagline">Il vero gusto dell’Italia a Basilea</div>
+          <p class="muted" style="color:#cfd7e5" data-i18n="footer_text">
+            Caffè, specialità italiane, take away e prodotti tipici selezionati.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title" data-i18n="footer_nav">Navigazione</div>
+          <div class="footer-links">
+            <a href="#about" data-i18n="nav_about">Chi siamo</a>
+            <a href="#menu" data-i18n="nav_menu">Menu</a>
+            <a href="#shop" data-i18n="nav_shop">Bottega</a>
+            <a href="#gallery" data-i18n="nav_gallery">Galleria</a>
+            <a href="#contact" data-i18n="nav_contact">Contatti</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title" data-i18n="footer_contact">Contatti</div>
+          <div style="display:grid;gap:8px;color:#d8dfeb">
+            <div>📍 Kleinhüningerstrasse 141, 4057 Basel</div>
+            <div>📞 +41 78 612 18 23</div>
+            <div>✉️ info.dolceitalia2025@gmail.com</div>
+            <div>📲 @dolceitalia_ferlito</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span> Dolce Italia Ferlito. <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating">
+    <a class="float-call" href="tel:+41786121823" aria-label="Chiama">📞</a>
+    <a class="float-map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kleinh%C3%BCningerstrasse+141%2C+4057+Basel" aria-label="Mappa">📍</a>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+
+    menuToggle.addEventListener('click', () => {
+      mobilePanel.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-panel a').forEach(link => {
+      link.addEventListener('click', () => mobilePanel.classList.remove('open'));
+    });
+
+    document.querySelectorAll('.menu-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.menu-tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.panel).classList.add('active');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const translations = {
+      it: {
+        nav_about: "Chi siamo",
+        nav_menu: "Menu",
+        nav_custom: "Panino",
+        nav_shop: "Bottega",
+        nav_gallery: "Galleria",
+        nav_contact: "Contatti",
+
+        hero_title: "Il vero gusto dell’Italia, ogni giorno a Basilea.",
+        hero_text: "Caffè artigianale, specialità italiane fresche e prodotti autentici nel cuore di Basilea.",
+        hero_btn_menu: "Scopri il menu",
+        hero_btn_call: "Chiama ora",
+        hero_btn_route: "Apri percorso",
+        hero_badge_1: "☕ Caffè Illy",
+        hero_badge_2: "🥪 Take Away",
+        hero_badge_3: "🇮🇹 Specialità italiane",
+
+        featured_eyebrow: "⭐ I più amati",
+        featured_title: "I prodotti che i clienti scelgono più spesso",
+        featured_text: "Una selezione rapida dei preferiti del momento.",
+        badge_bestseller: "BESTSELLER",
+
+        offer_eyebrow: "⏰ Solo fino alle 14:00",
+        offer_title: "Offerta pranzo",
+        offer_text: "Perfetta per la pausa pranzo: scegli un panino e abbinalo alla tua bibita.",
+        offer_stat_1: "preparazione veloce",
+        offer_stat_2: "preparato al momento",
+        offer_stat_3: "pratico e veloce",
+        offer_card_badge: "🔥 Combo del giorno",
+        offer_card_title: "Panino + Bibita",
+        offer_card_text: "Disponibile tutti i giorni fino alle 14:00.",
+        offer_btn: "Ordina ora",
+
+        about_eyebrow: "Chi siamo",
+        about_title: "Un angolo d’Italia a Basilea",
+        about_text: "Da Dolce Italia Ferlito portiamo ogni giorno un angolo d’Italia a Basilea: caffè, colazioni, tavola calda, panini, piadine, dolci e prodotti tipici selezionati.",
+        about_box_1_title: "Caffè Illy",
+        about_box_1_text: "Autentico caffè italiano",
+        about_box_2_title: "Fresco",
+        about_box_2_text: "Prodotti freschi ogni giorno",
+        about_box_3_title: "Tavola calda",
+        about_box_3_text: "Specialità calde italiane",
+        about_box_4_title: "Autentico",
+        about_box_4_text: "Vero gusto italiano",
+
+        menu_eyebrow: "Menu",
+        menu_title: "Il nostro menu",
+        menu_text: "Specialità italiane preparate con passione.",
+        tab_1: "☕ Caffè",
+        tab_2: "🍽️ Tavola calda",
+        tab_3: "🥪 Panini",
+        tab_4: "🥐 Dolci & Bevande",
+        coffee_title: "☕ Caffè – Illy",
+        hot_title: "🍽️ Tavola calda",
+        sandwich_title: "🥪 Panini",
+        sweet_title: "🥐 Colazione, dolci e bevande",
+        sandwich_note: "Panino + bibita disponibile anche in formula pranzo.",
+        allergen_note: "Tutti i prezzi sono IVA inclusa. Allergeni? Chiedici pure.",
+        popular_note: "Molto richiesto",
+
+        custom_eyebrow: "Personalizza",
+        custom_title: "Crea il tuo panino o piadina",
+        custom_text: "Scegli i tuoi ingredienti preferiti per un’esperienza su misura.",
+        custom_cta: "🥪 Vieni in negozio per creare il tuo panino o piadina perfetta.",
+
+        shop_eyebrow: "Bottega italiana",
+        shop_title: "Specialità italiane selezionate",
+        shop_text: "Scopri il nostro angolo dedicato alle eccellenze italiane: olio extravergine di oliva, biscotti, panettoni, passata di pomodoro, ’nduja calabrese e molto altro.",
+        shop_card_1: "DOP e IGP selezionati",
+        shop_card_2: "Panettoni artigianali",
+        shop_card_3: "Piccante e autentica",
+        shop_card_4: "Sapori italiani da portare a casa",
+
+        gallery_eyebrow: "Galleria",
+        gallery_title: "Un viaggio visivo attraverso i nostri sapori",
+        gallery_text: "Uno sguardo alla nostra atmosfera, ai nostri prodotti e ai sapori d’Italia.",
+
+        insta_title: "Seguici su Instagram",
+        insta_text: "Per vedere tutte le nostre specialità e novità quotidiane.",
+
+        contact_eyebrow: "Contatti",
+        contact_title: "Vieni a trovarci o contattaci",
+        contact_text: "Siamo a Basilea, pronti ad accoglierti ogni giorno con gusto italiano.",
+        address_title: "Indirizzo",
+        phone_title: "Telefono",
+        hours_title: "Orari di apertura",
+        route_btn: "Indicazioni",
+        call_btn: "Chiama ora",
+        mail_btn: "Invia email",
+
+        footer_tagline: "Il vero gusto dell’Italia a Basilea",
+        footer_text: "Caffè, specialità italiane, take away e prodotti tipici selezionati.",
+        footer_nav: "Navigazione",
+        footer_contact: "Contatti",
+        footer_rights: "Tutti i diritti riservati."
+      },
+
+      de: {
+        nav_about: "Über uns",
+        nav_menu: "Speisekarte",
+        nav_custom: "Panino",
+        nav_shop: "Feinkost",
+        nav_gallery: "Galerie",
+        nav_contact: "Kontakt",
+
+        hero_title: "Der echte Geschmack Italiens, jeden Tag in Basel.",
+        hero_text: "Handwerklicher Kaffee, frische italienische Spezialitäten und authentische Produkte im Herzen von Basel.",
+        hero_btn_menu: "Speisekarte ansehen",
+        hero_btn_call: "Jetzt anrufen",
+        hero_btn_route: "Route öffnen",
+        hero_badge_1: "☕ Illy Kaffee",
+        hero_badge_2: "🥪 Take Away",
+        hero_badge_3: "🇮🇹 Italienische Spezialitäten",
+
+        featured_eyebrow: "⭐ Beliebt",
+        featured_title: "Die Produkte, die unsere Kunden am häufigsten wählen",
+        featured_text: "Eine schnelle Auswahl der aktuellen Favoriten.",
+        badge_bestseller: "BESTSELLER",
+
+        offer_eyebrow: "⏰ Nur bis 14:00 Uhr",
+        offer_title: "Mittagsangebot",
+        offer_text: "Perfekt für die Mittagspause: Wählen Sie ein Panino und kombinieren Sie es mit einem Getränk.",
+        offer_stat_1: "schnelle Zubereitung",
+        offer_stat_2: "frisch zubereitet",
+        offer_stat_3: "praktisch und schnell",
+        offer_card_badge: "🔥 Tages-Combo",
+        offer_card_title: "Panino + Getränk",
+        offer_card_text: "Täglich bis 14:00 Uhr verfügbar.",
+        offer_btn: "Jetzt bestellen",
+
+        about_eyebrow: "Über uns",
+        about_title: "Ein Stück Italien in Basel",
+        about_text: "Bei Dolce Italia Ferlito bringen wir jeden Tag ein Stück Italien nach Basel: Kaffee, Frühstück, warme Spezialitäten, Panini, Piadine, Desserts und ausgewählte italienische Produkte.",
+        about_box_1_title: "Illy Kaffee",
+        about_box_1_text: "Authentischer italienischer Kaffee",
+        about_box_2_title: "Frisch",
+        about_box_2_text: "Jeden Tag frische Produkte",
+        about_box_3_title: "Warme Küche",
+        about_box_3_text: "Italienische warme Spezialitäten",
+        about_box_4_title: "Authentisch",
+        about_box_4_text: "Echter italienischer Geschmack",
+
+        menu_eyebrow: "Speisekarte",
+        menu_title: "Unsere Speisekarte",
+        menu_text: "Italienische Spezialitäten mit Leidenschaft zubereitet.",
+        tab_1: "☕ Kaffee",
+        tab_2: "🍽️ Warme Küche",
+        tab_3: "🥪 Panini",
+        tab_4: "🥐 Süsses & Getränke",
+        coffee_title: "☕ Kaffee – Illy",
+        hot_title: "🍽️ Warme Spezialitäten",
+        sandwich_title: "🥪 Panini",
+        sweet_title: "🥐 Frühstück, Desserts und Getränke",
+        sandwich_note: "Panino + Getränk auch als Mittagsangebot verfügbar.",
+        allergen_note: "Alle Preise inklusive MwSt. Allergene? Fragen Sie uns gerne.",
+        popular_note: "Sehr beliebt",
+
+        custom_eyebrow: "Individuell",
+        custom_title: "Stellen Sie Ihr Panino oder Ihre Piadina selbst zusammen",
+        custom_text: "Wählen Sie Ihre Lieblingszutaten für ein individuelles Geschmackserlebnis.",
+        custom_cta: "🥪 Besuchen Sie uns im Laden und kreieren Sie Ihr perfektes Panino oder Ihre perfekte Piadina.",
+
+        shop_eyebrow: "Italienische Feinkost",
+        shop_title: "Ausgewählte italienische Spezialitäten",
+        shop_text: "Entdecken Sie unseren Bereich mit italienischen Spezialitäten: natives Olivenöl extra, Kekse, Panettone, Tomatensauce, kalabrische ’Nduja und vieles mehr.",
+        shop_card_1: "Ausgewählte DOP- und IGP-Produkte",
+        shop_card_2: "Handwerkliche Panettone",
+        shop_card_3: "Würzig und authentisch",
+        shop_card_4: "Italienische Aromen für zuhause",
+
+        gallery_eyebrow: "Galerie",
+        gallery_title: "Eine visuelle Reise durch unsere Geschmäcker",
+        gallery_text: "Ein Blick auf unsere Atmosphäre, unsere Produkte und die Aromen Italiens.",
+
+        insta_title: "Folgen Sie uns auf Instagram",
+        insta_text: "Entdecken Sie täglich unsere Spezialitäten und Neuheiten.",
+
+        contact_eyebrow: "Kontakt",
+        contact_title: "Besuchen Sie uns oder kontaktieren Sie uns",
+        contact_text: "Wir sind in Basel und freuen uns, Sie jeden Tag mit italienischem Genuss zu begrüßen.",
+        address_title: "Adresse",
+        phone_title: "Telefon",
+        hours_title: "Öffnungszeiten",
+        route_btn: "Route",
+        call_btn: "Jetzt anrufen",
+        mail_btn: "E-Mail senden",
+
+        footer_tagline: "Der echte Geschmack Italiens in Basel",
+        footer_text: "Kaffee, italienische Spezialitäten, Take Away und ausgewählte Feinkost.",
+        footer_nav: "Navigation",
+        footer_contact: "Kontakt",
+        footer_rights: "Alle Rechte vorbehalten."
+      }
+    };
+
+    let currentLang = 'it';
+
+    function setLanguage(lang){
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      const hours = {
+        it: `Lunedì: Chiuso<br>Martedì–Venerdì: 07:30–18:30<br>Sabato: 09:00–18:30<br>Domenica: 10:00–16:00`,
+        de: `Montag: Geschlossen<br>Dienstag–Freitag: 07:30–18:30<br>Samstag: 09:00–18:30<br>Sonntag: 10:00–16:00`
+      };
+      document.getElementById('hoursText').innerHTML = hours[lang];
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    setLanguage('it');
+  </script>
+</body>
+</html>
