@@ -9,13 +9,11 @@
   <meta name="theme-color" content="#0f172a" />
   <meta name="robots" content="index, follow" />
 
-  <link rel="canonical" href="https://www.dolceitaliaferlito.ch/">
-
   <meta property="og:title" content="Dolce Italia Ferlito | Italienischer Kaffee, Panini & Spezialitäten in Basel">
   <meta property="og:description" content="Illy Kaffee, Panini, Arancini, Desserts, Take Away und italienische Spezialitäten in Basel.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.dolceitaliaferlito.ch/">
-  <meta property="og:image" content="https://www.dolceitaliaferlito.ch/og-image.jpg">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="og-image.jpg">
 
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,49 +22,41 @@
 
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"CafeOrCoffeeShop",
-    "name":"Dolce Italia Ferlito",
-    "image":"https://www.dolceitaliaferlito.ch/og-image.jpg",
-    "url":"https://www.dolceitaliaferlito.ch/",
-    "telephone":"+41767885771",
-    "email":"info.dolceitalia2025@gmail.com",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Kleinhüningerstrasse 141",
-      "postalCode":"4057",
-      "addressLocality":"Basel",
-      "addressCountry":"CH"
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Dolce Italia Ferlito",
+    "telephone": "+41767885771",
+    "email": "info.dolceitalia2025@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kleinhüningerstrasse 141",
+      "postalCode": "4057",
+      "addressLocality": "Basel",
+      "addressCountry": "CH"
     },
-    "sameAs":[
+    "sameAs": [
       "https://www.instagram.com/dolceitalia_ferlito"
     ],
-    "servesCuisine":"Italian",
-    "priceRange":"CHF",
-    "openingHoursSpecification":[
+    "servesCuisine": "Italian",
+    "priceRange": "CHF",
+    "openingHoursSpecification": [
       {
-        "@type":"OpeningHoursSpecification",
-        "dayOfWeek":"Monday",
-        "opens":"00:00",
-        "closes":"00:00"
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:30",
+        "closes": "18:30"
       },
       {
-        "@type":"OpeningHoursSpecification",
-        "dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],
-        "opens":"07:30",
-        "closes":"18:30"
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "18:30"
       },
       {
-        "@type":"OpeningHoursSpecification",
-        "dayOfWeek":"Saturday",
-        "opens":"09:00",
-        "closes":"18:30"
-      },
-      {
-        "@type":"OpeningHoursSpecification",
-        "dayOfWeek":"Sunday",
-        "opens":"10:00",
-        "closes":"16:00"
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "16:00"
       }
     ]
   }
@@ -313,7 +303,7 @@
 
     .hero{
       position:relative;
-      min-height:88vh;
+      min-height:84vh;
       display:grid;
       place-items:center;
       color:#fff;
@@ -842,7 +832,8 @@
       place-items:center;
       color:#fff;
       box-shadow:var(--shadow);
-      font-size:1.35rem;
+      font-size:1.1rem;
+      font-weight:900;
     }
 
     .float-call{background:var(--green)}
@@ -957,7 +948,7 @@
               <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
             </div>
             <div class="product-body">
-              <h3 class="product-title">Mortadella &amp; Stracciatella</h3>
+              <h3 class="product-title" data-i18n="featured_product_1">Mortadella &amp; Stracciatella</h3>
               <div class="price"><span>CHF 8.50</span><span>🔥</span></div>
             </div>
           </article>
@@ -968,7 +959,7 @@
               <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
             </div>
             <div class="product-body">
-              <h3 class="product-title">Arancino Ragù</h3>
+              <h3 class="product-title" data-i18n="featured_product_2">Arancino Ragù</h3>
               <div class="price"><span>CHF 6.50</span><span>🔥</span></div>
             </div>
           </article>
@@ -979,7 +970,7 @@
               <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
             </div>
             <div class="product-body">
-              <h3 class="product-title">Cappuccino Illy</h3>
+              <h3 class="product-title" data-i18n="featured_product_3">Cappuccino Illy</h3>
               <div class="price"><span>CHF 5.20</span><span>☕</span></div>
             </div>
           </article>
@@ -990,7 +981,7 @@
               <div class="badge" data-i18n="badge_bestseller">BESTSELLER</div>
             </div>
             <div class="product-body">
-              <h3 class="product-title">Panzerotto Pistazie</h3>
+              <h3 class="product-title" data-i18n="featured_product_4">Panzerotto Pistazie</h3>
               <div class="price"><span>CHF 7.80</span><span>🔥</span></div>
             </div>
           </article>
@@ -1109,13 +1100,13 @@
             <div class="menu-block">
               <h3 data-i18n="coffee_title">☕ Kaffee – Illy</h3>
               <div class="menu-list">
-                <div class="menu-item"><div><strong>Espresso</strong></div><div class="amount">CHF 4.20</div></div>
-                <div class="menu-item"><div><strong>Doppelter Espresso</strong></div><div class="amount">CHF 5.80</div></div>
-                <div class="menu-item"><div><strong>Kaffee</strong></div><div class="amount">CHF 4.60</div></div>
-                <div class="menu-item"><div><strong>Schale</strong></div><div class="amount">CHF 4.80</div></div>
-                <div class="menu-item"><div><strong>Cappuccino</strong><small data-i18n="popular_note">Sehr beliebt</small></div><div class="amount">CHF 5.20</div></div>
-                <div class="menu-item"><div><strong>Latte Macchiato</strong></div><div class="amount">CHF 5.80</div></div>
-                <div class="menu-item"><div><strong>Heisser Tee</strong></div><div class="amount">CHF 4.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="coffee_1">Espresso</strong></div><div class="amount">CHF 4.20</div></div>
+                <div class="menu-item"><div><strong data-i18n="coffee_2">Doppelter Espresso</strong></div><div class="amount">CHF 5.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="coffee_3">Kaffee</strong></div><div class="amount">CHF 4.60</div></div>
+                <div class="menu-item"><div><strong data-i18n="coffee_4">Schale</strong></div><div class="amount">CHF 4.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="coffee_5">Cappuccino</strong><small data-i18n="popular_note">Sehr beliebt</small></div><div class="amount">CHF 5.20</div></div>
+                <div class="menu-item"><div><strong data-i18n="coffee_6">Latte Macchiato</strong></div><div class="amount">CHF 5.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="coffee_7">Heisser Tee</strong></div><div class="amount">CHF 4.50</div></div>
               </div>
             </div>
           </div>
@@ -1124,13 +1115,13 @@
             <div class="menu-block">
               <h3 data-i18n="hot_title">🍽️ Warme Spezialitäten</h3>
               <div class="menu-list">
-                <div class="menu-item"><div><strong>Arancino Ragù</strong></div><div class="amount">CHF 6.50</div></div>
-                <div class="menu-item"><div><strong>Arancino Spinat</strong></div><div class="amount">CHF 6.50</div></div>
-                <div class="menu-item"><div><strong>Arancino Pistazien</strong></div><div class="amount">CHF 6.50</div></div>
-                <div class="menu-item"><div><strong>Arancino Aubergine</strong></div><div class="amount">CHF 6.50</div></div>
-                <div class="menu-item"><div><strong>Panzerotto Pistazien</strong></div><div class="amount">CHF 7.80</div></div>
-                <div class="menu-item"><div><strong>Panzerotto Prosciutto</strong></div><div class="amount">CHF 7.80</div></div>
-                <div class="menu-item"><div><strong>Panzerotto Salame piccante</strong></div><div class="amount">CHF 7.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="food_1">Arancino Ragù</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="food_2">Arancino Spinat</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="food_3">Arancino Pistazien</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="food_4">Arancino Aubergine</strong></div><div class="amount">CHF 6.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="food_5">Panzerotto Pistazien</strong></div><div class="amount">CHF 7.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="food_6">Panzerotto Prosciutto</strong></div><div class="amount">CHF 7.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="food_7">Panzerotto Salame piccante</strong></div><div class="amount">CHF 7.80</div></div>
               </div>
             </div>
           </div>
@@ -1139,14 +1130,14 @@
             <div class="menu-block">
               <h3 data-i18n="sandwich_title">🥪 Panini</h3>
               <div class="menu-list">
-                <div class="menu-item"><div><strong>Mortadella e stracciatella</strong></div><div class="amount">CHF 8.50</div></div>
-                <div class="menu-item"><div><strong>Salame piccante e formaggio</strong></div><div class="amount">CHF 7.50</div></div>
-                <div class="menu-item"><div><strong>Prosciutto crudo e gorgonzola</strong></div><div class="amount">CHF 7.80</div></div>
-                <div class="menu-item"><div><strong>Prosciutto cotto e formaggio</strong></div><div class="amount">CHF 7.50</div></div>
-                <div class="menu-item"><div><strong>Prosciutto cotto, salsa tartufata e stracciatella</strong></div><div class="amount">CHF 8.50</div></div>
-                <div class="menu-item"><div><strong>Fesa di tacchino e mozzarella</strong></div><div class="amount">CHF 7.20</div></div>
-                <div class="menu-item"><div><strong>Bresaola e formaggio</strong></div><div class="amount">CHF 8.00</div></div>
-                <div class="menu-item"><div><strong>Vegetariano</strong></div><div class="amount">CHF 7.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_1">Mortadella e stracciatella</strong></div><div class="amount">CHF 8.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_2">Salame piccante e formaggio</strong></div><div class="amount">CHF 7.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_3">Prosciutto crudo e gorgonzola</strong></div><div class="amount">CHF 7.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_4">Prosciutto cotto e formaggio</strong></div><div class="amount">CHF 7.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_5">Prosciutto cotto, salsa tartufata e stracciatella</strong></div><div class="amount">CHF 8.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_6">Fesa di tacchino e mozzarella</strong></div><div class="amount">CHF 7.20</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_7">Bresaola e formaggio</strong></div><div class="amount">CHF 8.00</div></div>
+                <div class="menu-item"><div><strong data-i18n="sandwich_8">Vegetariano</strong></div><div class="amount">CHF 7.50</div></div>
               </div>
               <div class="menu-note" data-i18n="sandwich_note">Panino + Getränk auch als Mittagsangebot verfügbar.</div>
             </div>
@@ -1156,17 +1147,17 @@
             <div class="menu-block">
               <h3 data-i18n="sweet_title">🥐 Frühstück, Desserts und Getränke</h3>
               <div class="menu-list">
-                <div class="menu-item"><div><strong>Buttergipfel</strong></div><div class="amount">CHF 3.20</div></div>
-                <div class="menu-item"><div><strong>Gipfel Vanille</strong></div><div class="amount">CHF 3.80</div></div>
-                <div class="menu-item"><div><strong>Gipfel Schokolade</strong></div><div class="amount">CHF 3.80</div></div>
-                <div class="menu-item"><div><strong>Gipfel Nutella</strong></div><div class="amount">CHF 4.20</div></div>
-                <div class="menu-item"><div><strong>Gipfel Pistazio</strong></div><div class="amount">CHF 4.50</div></div>
-                <div class="menu-item"><div><strong>Babà al rum</strong></div><div class="amount">CHF 4.50</div></div>
-                <div class="menu-item"><div><strong>Pasticciotto leccese</strong></div><div class="amount">CHF 3.60</div></div>
-                <div class="menu-item"><div><strong>Torta a fette</strong></div><div class="amount">CHF 4.60</div></div>
-                <div class="menu-item"><div><strong>Bubble Tea</strong></div><div class="amount">CHF 7.00</div></div>
-                <div class="menu-item"><div><strong>Acqua</strong></div><div class="amount">CHF 2.90</div></div>
-                <div class="menu-item"><div><strong>Coca-Cola / Fanta</strong></div><div class="amount">CHF 3.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_1">Buttergipfel</strong></div><div class="amount">CHF 3.20</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_2">Gipfel Vanille</strong></div><div class="amount">CHF 3.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_3">Gipfel Schokolade</strong></div><div class="amount">CHF 3.80</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_4">Gipfel Nutella</strong></div><div class="amount">CHF 4.20</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_5">Gipfel Pistazie</strong></div><div class="amount">CHF 4.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_6">Babà al rum</strong></div><div class="amount">CHF 4.50</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_7">Pasticciotto leccese</strong></div><div class="amount">CHF 3.60</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_8">Torta a fette</strong></div><div class="amount">CHF 4.60</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_9">Bubble Tea</strong></div><div class="amount">CHF 7.00</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_10">Acqua</strong></div><div class="amount">CHF 2.90</div></div>
+                <div class="menu-item"><div><strong data-i18n="sweet_11">Coca-Cola / Fanta</strong></div><div class="amount">CHF 3.50</div></div>
               </div>
               <div class="menu-note" data-i18n="allergen_note">Alle Preise inklusive MwSt. Allergene? Fragen Sie uns gerne.</div>
             </div>
@@ -1183,20 +1174,20 @@
           <p class="muted" data-i18n="custom_text">Wählen Sie Ihre Lieblingszutaten für ein individuelles Geschmackserlebnis.</p>
 
           <div class="ingredient-grid">
-            <div class="ingredient">Prosciutto crudo</div>
-            <div class="ingredient">Prosciutto cotto</div>
-            <div class="ingredient">Salami</div>
-            <div class="ingredient">Scharfe Salami</div>
-            <div class="ingredient">Mortadella</div>
-            <div class="ingredient">Edamer</div>
-            <div class="ingredient">Mozzarella</div>
-            <div class="ingredient">Provola</div>
-            <div class="ingredient">Coppa</div>
-            <div class="ingredient">Stracciatella Käse</div>
-            <div class="ingredient">Trüffelsauce</div>
-            <div class="ingredient">Bresaola</div>
-            <div class="ingredient">Putenbrust</div>
-            <div class="ingredient">Speck</div>
+            <div class="ingredient" data-i18n="ingredient_1">Prosciutto crudo</div>
+            <div class="ingredient" data-i18n="ingredient_2">Prosciutto cotto</div>
+            <div class="ingredient" data-i18n="ingredient_3">Salami</div>
+            <div class="ingredient" data-i18n="ingredient_4">Scharfe Salami</div>
+            <div class="ingredient" data-i18n="ingredient_5">Mortadella</div>
+            <div class="ingredient" data-i18n="ingredient_6">Edamer</div>
+            <div class="ingredient" data-i18n="ingredient_7">Mozzarella</div>
+            <div class="ingredient" data-i18n="ingredient_8">Provola</div>
+            <div class="ingredient" data-i18n="ingredient_9">Coppa</div>
+            <div class="ingredient" data-i18n="ingredient_10">Stracciatella Käse</div>
+            <div class="ingredient" data-i18n="ingredient_11">Trüffelsauce</div>
+            <div class="ingredient" data-i18n="ingredient_12">Bresaola</div>
+            <div class="ingredient" data-i18n="ingredient_13">Putenbrust</div>
+            <div class="ingredient" data-i18n="ingredient_14">Speck</div>
           </div>
 
           <div class="custom-cta" data-i18n="custom_cta">
@@ -1230,22 +1221,22 @@
         <div class="shop-grid">
           <div class="shop-card green">
             <div style="font-size:2rem">🫒</div>
-            <h3>Olio Extravergine</h3>
+            <h3 data-i18n="shop_product_1">Olio Extravergine</h3>
             <p class="muted" data-i18n="shop_card_1">Ausgewählte DOP- und IGP-Produkte</p>
           </div>
           <div class="shop-card red">
             <div style="font-size:2rem">🍪</div>
-            <h3>Biscotti &amp; Dolci</h3>
+            <h3 data-i18n="shop_product_2">Biscotti &amp; Dolci</h3>
             <p class="muted" data-i18n="shop_card_2">Handwerkliche Panettone</p>
           </div>
           <div class="shop-card gold">
             <div style="font-size:2rem">🌶️</div>
-            <h3>'Nduja Calabrese</h3>
+            <h3 data-i18n="shop_product_3">'Nduja Calabrese</h3>
             <p class="muted" data-i18n="shop_card_3">Würzig und authentisch</p>
           </div>
           <div class="shop-card">
             <div style="font-size:2rem">🍅</div>
-            <h3>Passata di Pomodoro</h3>
+            <h3 data-i18n="shop_product_4">Passata di Pomodoro</h3>
             <p class="muted" data-i18n="shop_card_4">Italienische Aromen für zuhause</p>
           </div>
         </div>
@@ -1361,8 +1352,8 @@
             <h3 data-i18n="contact_extra_title">Schnell & unkompliziert</h3>
             <p class="muted" data-i18n="contact_extra_text">Rufen Sie uns an, schreiben Sie uns auf WhatsApp oder kommen Sie direkt vorbei.</p>
             <div class="contact-actions">
-              <a class="btn btn-primary" href="tel:+41767885771">Anrufen</a>
-              <a class="btn btn-green" target="_blank" rel="noopener" href="https://wa.me/41786121823">WhatsApp</a>
+              <a class="btn btn-primary" href="tel:+41767885771" data-i18n="contact_extra_btn_1">Anrufen</a>
+              <a class="btn btn-green" target="_blank" rel="noopener" href="https://wa.me/41786121823" data-i18n="contact_extra_btn_2">WhatsApp</a>
             </div>
           </div>
         </div>
@@ -1425,7 +1416,7 @@
 
   <div class="floating">
     <a class="float-call" href="tel:+41767885771" aria-label="Anrufen">📞</a>
-    <a class="float-whatsapp" target="_blank" rel="noopener" href="https://wa.me/41786121823" aria-label="WhatsApp">💬</a>
+    <a class="float-whatsapp" target="_blank" rel="noopener" href="https://wa.me/41786121823" aria-label="WhatsApp">WA</a>
     <a class="float-map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kleinh%C3%BCningerstrasse+141%2C+4057+Basel" aria-label="Karte">📍</a>
   </div>
 
@@ -1471,6 +1462,7 @@
         nav_shop: "Bottega",
         nav_gallery: "Galleria",
         nav_contact: "Contatti",
+
         hero_title: "Il vero gusto dell’Italia, ogni giorno a Basilea.",
         hero_text: "Caffè Illy, specialità italiane fresche, panini, arancini e prodotti selezionati nel cuore di Basilea.",
         hero_meta_1: "📍 Kleinhüningerstrasse 141, 4057 Basilea",
@@ -1483,10 +1475,16 @@
         hero_badge_1: "☕ Caffè Illy",
         hero_badge_2: "🥪 Take Away",
         hero_badge_3: "🇮🇹 Specialità italiane",
+
         featured_eyebrow: "⭐ I più amati",
         featured_title: "I prodotti che i clienti scelgono più spesso",
         featured_text: "Una selezione rapida dei preferiti del momento.",
         badge_bestseller: "BESTSELLER",
+        featured_product_1: "Mortadella & Stracciatella",
+        featured_product_2: "Arancino Ragù",
+        featured_product_3: "Cappuccino Illy",
+        featured_product_4: "Panzerotto Pistacchio",
+
         offer_eyebrow: "⏰ Solo fino alle 14:00",
         offer_title: "Offerte pranzo",
         offer_text: "Perfette per la pausa pranzo: veloci, fresche e ideali da asporto.",
@@ -1501,6 +1499,7 @@
         offer_card_title_2: "Panino + Bevanda + Caffè",
         offer_card_text_2: "Ideale per una pausa pranzo completa.",
         offer_btn_2: "Chiama ora",
+
         about_eyebrow: "Chi siamo",
         about_title: "Un angolo d’Italia a Basilea",
         about_text: "Da Dolce Italia Ferlito portiamo ogni giorno il gusto italiano a Basilea: caffè, colazioni, tavola calda, panini, piadine, dolci e prodotti tipici selezionati.",
@@ -1512,6 +1511,7 @@
         about_box_3_text: "Specialità calde italiane",
         about_box_4_title: "Autentico",
         about_box_4_text: "Vero gusto italiano",
+
         menu_eyebrow: "Menu",
         menu_title: "Il nostro menu",
         menu_text: "Specialità italiane preparate con passione.",
@@ -1519,35 +1519,96 @@
         tab_2: "🍽️ Tavola calda",
         tab_3: "🥪 Panini",
         tab_4: "🥐 Dolci & Bevande",
+
         coffee_title: "☕ Caffè – Illy",
+        coffee_1: "Espresso",
+        coffee_2: "Espresso doppio",
+        coffee_3: "Caffè",
+        coffee_4: "Caffè latte",
+        coffee_5: "Cappuccino",
+        coffee_6: "Latte macchiato",
+        coffee_7: "Tè caldo",
+
         hot_title: "🍽️ Tavola calda",
+        food_1: "Arancino Ragù",
+        food_2: "Arancino Spinaci",
+        food_3: "Arancino Pistacchio",
+        food_4: "Arancino Melanzane",
+        food_5: "Panzerotto Pistacchio",
+        food_6: "Panzerotto Prosciutto",
+        food_7: "Panzerotto Salame piccante",
+
         sandwich_title: "🥪 Panini",
-        sweet_title: "🥐 Colazione, dolci e bevande",
+        sandwich_1: "Mortadella e stracciatella",
+        sandwich_2: "Salame piccante e formaggio",
+        sandwich_3: "Prosciutto crudo e gorgonzola",
+        sandwich_4: "Prosciutto cotto e formaggio",
+        sandwich_5: "Prosciutto cotto, salsa tartufata e stracciatella",
+        sandwich_6: "Fesa di tacchino e mozzarella",
+        sandwich_7: "Bresaola e formaggio",
+        sandwich_8: "Vegetariano",
         sandwich_note: "Panino + bibita disponibile anche in formula pranzo.",
+
+        sweet_title: "🥐 Colazione, dolci e bevande",
+        sweet_1: "Cornetto semplice",
+        sweet_2: "Cornetto alla vaniglia",
+        sweet_3: "Cornetto al cioccolato",
+        sweet_4: "Cornetto alla Nutella",
+        sweet_5: "Cornetto al pistacchio",
+        sweet_6: "Babà al rum",
+        sweet_7: "Pasticciotto leccese",
+        sweet_8: "Torta a fette",
+        sweet_9: "Bubble Tea",
+        sweet_10: "Acqua",
+        sweet_11: "Coca-Cola / Fanta",
         allergen_note: "Tutti i prezzi sono IVA inclusa. Allergeni? Chiedici pure.",
         popular_note: "Molto richiesto",
+
         custom_eyebrow: "Personalizza",
         custom_title: "Crea il tuo panino o piadina",
         custom_text: "Scegli i tuoi ingredienti preferiti per un’esperienza su misura.",
+        ingredient_1: "Prosciutto crudo",
+        ingredient_2: "Prosciutto cotto",
+        ingredient_3: "Salame",
+        ingredient_4: "Salame piccante",
+        ingredient_5: "Mortadella",
+        ingredient_6: "Edamer",
+        ingredient_7: "Mozzarella",
+        ingredient_8: "Provola",
+        ingredient_9: "Coppa",
+        ingredient_10: "Stracciatella",
+        ingredient_11: "Salsa tartufata",
+        ingredient_12: "Bresaola",
+        ingredient_13: "Fesa di tacchino",
+        ingredient_14: "Speck",
         custom_cta: "🥪 Vieni in negozio per creare il tuo panino o piadina perfetta.",
+
         shop_eyebrow: "Bottega italiana",
         shop_title: "Specialità italiane selezionate",
         shop_text: "Scopri il nostro angolo dedicato alle eccellenze italiane: olio extravergine di oliva, biscotti, panettoni, passata di pomodoro, ’nduja calabrese e molto altro.",
+        shop_product_1: "Olio Extravergine",
+        shop_product_2: "Biscotti & Dolci",
+        shop_product_3: "'Nduja Calabrese",
+        shop_product_4: "Passata di Pomodoro",
         shop_card_1: "DOP e IGP selezionati",
         shop_card_2: "Panettoni artigianali",
         shop_card_3: "Piccante e autentica",
         shop_card_4: "Sapori italiani da portare a casa",
+
         gallery_eyebrow: "Galleria",
         gallery_title: "Un viaggio visivo attraverso i nostri sapori",
         gallery_text: "Uno sguardo alla nostra atmosfera, ai nostri prodotti e ai sapori d’Italia.",
+
         reviews_eyebrow: "Recensioni",
         reviews_title: "Cosa amano i nostri clienti",
         reviews_text: "Prodotti freschi, gusto autentico e atmosfera italiana.",
         review_1: "Ottimo caffè, servizio gentile e specialità italiane davvero buone.",
         review_2: "Perfetto per la pausa pranzo: veloce, buono e fresco.",
         review_3: "Sembra davvero di essere in Italia. Consigliatissimo.",
+
         insta_title: "Seguici su Instagram",
         insta_text: "Scopri ogni giorno le nostre specialità, offerte e novità.",
+
         contact_eyebrow: "Contatti",
         contact_title: "Vieni a trovarci o contattaci",
         contact_text: "Siamo a Basilea, pronti ad accoglierti ogni giorno con gusto italiano.",
@@ -1560,12 +1621,16 @@
         mail_btn: "Invia email",
         contact_extra_title: "Facile e veloce",
         contact_extra_text: "Chiamaci, scrivici su WhatsApp oppure vieni direttamente in negozio.",
+        contact_extra_btn_1: "Chiama",
+        contact_extra_btn_2: "WhatsApp",
+
         footer_tagline: "Il vero gusto dell’Italia a Basilea",
         footer_text: "Caffè, specialità italiane, take away e prodotti tipici selezionati.",
         footer_nav: "Navigazione",
         footer_contact: "Contatti",
         footer_rights: "Tutti i diritti riservati."
       },
+
       de: {
         nav_about: "Über uns",
         nav_menu: "Speisekarte",
@@ -1573,6 +1638,7 @@
         nav_shop: "Feinkost",
         nav_gallery: "Galerie",
         nav_contact: "Kontakt",
+
         hero_title: "Der echte Geschmack Italiens, jeden Tag in Basel.",
         hero_text: "Illy Kaffee, frische italienische Spezialitäten, Panini, Arancini und ausgewählte Produkte im Herzen von Basel.",
         hero_meta_1: "📍 Kleinhüningerstrasse 141, 4057 Basel",
@@ -1585,10 +1651,16 @@
         hero_badge_1: "☕ Illy Kaffee",
         hero_badge_2: "🥪 Take Away",
         hero_badge_3: "🇮🇹 Italienische Spezialitäten",
+
         featured_eyebrow: "⭐ Beliebt",
         featured_title: "Die beliebtesten Produkte unserer Kunden",
         featured_text: "Eine schnelle Auswahl der aktuellen Favoriten.",
         badge_bestseller: "BESTSELLER",
+        featured_product_1: "Mortadella & Stracciatella",
+        featured_product_2: "Arancino Ragù",
+        featured_product_3: "Cappuccino Illy",
+        featured_product_4: "Panzerotto Pistazie",
+
         offer_eyebrow: "⏰ Nur bis 14:00 Uhr",
         offer_title: "Mittagsangebote",
         offer_text: "Perfekt für die Mittagspause: schnell, frisch und ideal zum Mitnehmen.",
@@ -1603,6 +1675,7 @@
         offer_card_title_2: "Panino + Getränk + Kaffee",
         offer_card_text_2: "Ideal für Ihre komplette Mittagspause.",
         offer_btn_2: "Jetzt anrufen",
+
         about_eyebrow: "Über uns",
         about_title: "Ein Stück Italien in Basel",
         about_text: "Bei Dolce Italia Ferlito bringen wir jeden Tag italienischen Genuss nach Basel: Kaffee, Frühstück, warme Spezialitäten, Panini, Piadine, Desserts und ausgewählte Feinkost.",
@@ -1614,6 +1687,7 @@
         about_box_3_text: "Italienische warme Spezialitäten",
         about_box_4_title: "Authentisch",
         about_box_4_text: "Echter italienischer Geschmack",
+
         menu_eyebrow: "Speisekarte",
         menu_title: "Unsere Speisekarte",
         menu_text: "Italienische Spezialitäten mit Leidenschaft zubereitet.",
@@ -1621,35 +1695,96 @@
         tab_2: "🍽️ Warme Küche",
         tab_3: "🥪 Panini",
         tab_4: "🥐 Süsses & Getränke",
+
         coffee_title: "☕ Kaffee – Illy",
+        coffee_1: "Espresso",
+        coffee_2: "Doppelter Espresso",
+        coffee_3: "Kaffee",
+        coffee_4: "Schale",
+        coffee_5: "Cappuccino",
+        coffee_6: "Latte Macchiato",
+        coffee_7: "Heisser Tee",
+
         hot_title: "🍽️ Warme Spezialitäten",
+        food_1: "Arancino Ragù",
+        food_2: "Arancino Spinat",
+        food_3: "Arancino Pistazien",
+        food_4: "Arancino Aubergine",
+        food_5: "Panzerotto Pistazien",
+        food_6: "Panzerotto Prosciutto",
+        food_7: "Panzerotto Salame piccante",
+
         sandwich_title: "🥪 Panini",
-        sweet_title: "🥐 Frühstück, Desserts und Getränke",
+        sandwich_1: "Mortadella und Stracciatella",
+        sandwich_2: "Scharfe Salami und Käse",
+        sandwich_3: "Rohschinken und Gorgonzola",
+        sandwich_4: "Kochschinken und Käse",
+        sandwich_5: "Kochschinken, Trüffelsauce und Stracciatella",
+        sandwich_6: "Putenbrust und Mozzarella",
+        sandwich_7: "Bresaola und Käse",
+        sandwich_8: "Vegetarisch",
         sandwich_note: "Panino + Getränk auch als Mittagsangebot verfügbar.",
+
+        sweet_title: "🥐 Frühstück, Desserts und Getränke",
+        sweet_1: "Buttergipfel",
+        sweet_2: "Vanillegipfel",
+        sweet_3: "Schokoladengipfel",
+        sweet_4: "Nutellagipfel",
+        sweet_5: "Pistaziengipfel",
+        sweet_6: "Babà al Rum",
+        sweet_7: "Pasticciotto leccese",
+        sweet_8: "Kuchenstück",
+        sweet_9: "Bubble Tea",
+        sweet_10: "Wasser",
+        sweet_11: "Coca-Cola / Fanta",
         allergen_note: "Alle Preise inklusive MwSt. Allergene? Fragen Sie uns gerne.",
         popular_note: "Sehr beliebt",
+
         custom_eyebrow: "Individuell",
         custom_title: "Stellen Sie Ihr Panino oder Ihre Piadina selbst zusammen",
         custom_text: "Wählen Sie Ihre Lieblingszutaten für ein individuelles Geschmackserlebnis.",
+        ingredient_1: "Prosciutto crudo",
+        ingredient_2: "Prosciutto cotto",
+        ingredient_3: "Salami",
+        ingredient_4: "Scharfe Salami",
+        ingredient_5: "Mortadella",
+        ingredient_6: "Edamer",
+        ingredient_7: "Mozzarella",
+        ingredient_8: "Provola",
+        ingredient_9: "Coppa",
+        ingredient_10: "Stracciatella Käse",
+        ingredient_11: "Trüffelsauce",
+        ingredient_12: "Bresaola",
+        ingredient_13: "Putenbrust",
+        ingredient_14: "Speck",
         custom_cta: "🥪 Besuchen Sie uns im Laden und kreieren Sie Ihr perfektes Panino oder Ihre perfekte Piadina.",
+
         shop_eyebrow: "Italienische Feinkost",
         shop_title: "Ausgewählte italienische Spezialitäten",
         shop_text: "Entdecken Sie unseren Bereich mit italienischen Spezialitäten: natives Olivenöl extra, Kekse, Panettone, Tomatensauce, kalabrische ’Nduja und vieles mehr.",
+        shop_product_1: "Olio Extravergine",
+        shop_product_2: "Biscotti & Dolci",
+        shop_product_3: "'Nduja Calabrese",
+        shop_product_4: "Passata di Pomodoro",
         shop_card_1: "Ausgewählte DOP- und IGP-Produkte",
         shop_card_2: "Handwerkliche Panettone",
         shop_card_3: "Würzig und authentisch",
         shop_card_4: "Italienische Aromen für zuhause",
+
         gallery_eyebrow: "Galerie",
         gallery_title: "Eine visuelle Reise durch unsere Geschmäcker",
         gallery_text: "Ein Blick auf unsere Atmosphäre, unsere Produkte und die Aromen Italiens.",
+
         reviews_eyebrow: "Bewertungen",
         reviews_title: "Was unsere Kunden lieben",
         reviews_text: "Frische Produkte, authentischer Geschmack und italienische Atmosphäre.",
         review_1: "Sehr guter Kaffee, freundlicher Service und tolle italienische Spezialitäten.",
         review_2: "Perfekt für die Mittagspause – schnell, lecker und frisch.",
         review_3: "Man fühlt sich wie in Italien. Sehr empfehlenswert.",
+
         insta_title: "Folgen Sie uns auf Instagram",
         insta_text: "Entdecken Sie täglich unsere Spezialitäten, Angebote und Neuheiten.",
+
         contact_eyebrow: "Kontakt",
         contact_title: "Besuchen Sie uns oder kontaktieren Sie uns",
         contact_text: "Wir sind in Basel und freuen uns, Sie jeden Tag mit italienischem Genuss zu begrüßen.",
@@ -1662,6 +1797,9 @@
         mail_btn: "E-Mail senden",
         contact_extra_title: "Schnell & unkompliziert",
         contact_extra_text: "Rufen Sie uns an, schreiben Sie uns auf WhatsApp oder kommen Sie direkt vorbei.",
+        contact_extra_btn_1: "Anrufen",
+        contact_extra_btn_2: "WhatsApp",
+
         footer_tagline: "Der echte Geschmack Italiens in Basel",
         footer_text: "Kaffee, italienische Spezialitäten, Take Away und ausgewählte Feinkost.",
         footer_nav: "Navigation",
@@ -1702,4 +1840,4 @@
     setLanguage(savedLang);
   </script>
 </body>
-  </html>
+</html>
